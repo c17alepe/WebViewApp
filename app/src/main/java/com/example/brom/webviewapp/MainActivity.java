@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
     // Create a private member variable that can hold our WebView
@@ -21,14 +23,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // The FAB-code can be removed
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        WebView webView = new WebView(this);
+
+        setContentView(webView);
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("file:///android_asset/about.html");
+        //webView.loadUrl("https://scio.his.se");
         // 0. Enable Internet access for your App
         // 1. Create a WebView element in the layout file content_main.xml
         // 2. Give the WebView element ID "my_webview"
