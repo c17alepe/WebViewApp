@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        webView.loadUrl("file:///android_asset/about.html");
-        //webView.loadUrl("https://scio.his.se");
+        //webView.loadUrl("file:///android_asset/about.html");
+        webView.loadUrl("https://his.se");
         // 0. Enable Internet access for your App
         // 1. Create a WebView element in the layout file content_main.xml
         // 2. Give the WebView element ID "my_webview"
