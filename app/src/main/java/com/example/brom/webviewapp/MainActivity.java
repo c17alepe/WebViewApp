@@ -22,29 +22,23 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // The FAB-code can be removed
+        // creates the webview
         WebView webView = new WebView(this);
 
+        //sets the webview
         setContentView(webView);
 
+        //enables javascript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        //webView.loadUrl("file:///android_asset/about.html");
-        webView.loadUrl("https://his.se");
-        // 0. Enable Internet access for your App
-        // 1. Create a WebView element in the layout file content_main.xml
-        // 2. Give the WebView element ID "my_webview"
-        // -- Commit and push to your github fork
-        // 3. Create a private member variable called "myWebView" of type WebView
-        // 4. Locate the WebView element created in step 1 using the ID created in step 2
-        // 5. Create a new WebViewClient to attach to our WebView. This allows us to
-        //    browse the web inside our app.
-        // -- Commit and push to your github fork
-        // 6. Enable Javascript execution in your WebViewClient
-        // 7. Enter the url to load in our WebView
-        // -- Commit and push to your github fork
-        // 8. Take a snapshot showing your App
+
+        //loads internal site
+        webView.loadUrl("file:///android_asset/about.html");
+
+        //loads external site
+        //webView.loadUrl("https://wwwlab.iit.his.se/c17alepe/mobildesign/slutet/");
+
     }
 
     @Override
